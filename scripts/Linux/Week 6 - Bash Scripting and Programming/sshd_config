@@ -51,7 +51,10 @@ sysadmin@UbuntuDesktop:/etc/ssh$ cat sshd_config
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
+#ssh access via port 22
 Port 22
+#ssh access via port 2222
+Port 2222
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::

@@ -17,6 +17,8 @@ filebeat-playbook.yml
   
 metricbeat-playbook.yml
 
+https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c8b3afacf94e94bd184b/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml
+
   
 
 This document contains the following details:

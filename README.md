@@ -7,7 +7,17 @@ https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/2b1e13ec5aadc6467e723
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
+install-elk.yml
+
   https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/3c7f7e5e080e1233ea9c5d550c0b6470b5710a7d/Scripts/Ansible/ELK/install-elk.yml
+  
+filebeat-playbook.yml
+  
+  https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml
+  
+metricbeat-playbook.yml
+
+  
 
 This document contains the following details:
 - Description of the Topologu

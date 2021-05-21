@@ -46,19 +46,19 @@ Metricbeat records the metrics and statistics that it collects and ships them to
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name         | Function | IP Address | Operating System |
+|--------------|----------|------------|------------------|
+| Jump Box     | Gateway  | 10.0.0.4   | Linux            |
+| Web-1        |  DVWA    | 10.0.0.5   | Linux            |
+| Web-2        |  DVWA    | 10.0.0.6   | Linux            |
+| Redundant-VM |  DVWA    | 10.0.0.7   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+1.41.54.222
 
 Machines within the network can only be accessed by _____.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
@@ -67,8 +67,8 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
+| Jump Box | Yes                 | 1.41.54.222          |
+| ELK      | Yes                 | 1.41.54.222          |
 |          |                     |                      |
 
 ### Elk Configuration

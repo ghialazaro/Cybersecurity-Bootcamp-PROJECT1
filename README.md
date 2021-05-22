@@ -38,7 +38,7 @@ Load balancing ensures that the application will be highly available, in additio
 
 A jump box controls access to machines in the private network by allowing connections from specific IP addresses.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system use.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system use.
 
 Filebeat watches the log files, collects log events and forwards them to either Elasticsearch or Logstash.
 

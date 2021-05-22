@@ -91,7 +91,7 @@ This ELK server is configured to monitor the following machines:
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 1.41.54.222          |
+| Web-1    | Yes                 | 1.41.54.222          |
 | ELK      | Yes                 | 1.41.54.222          |
 |          |                     |                      |
 

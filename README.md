@@ -118,7 +118,19 @@ SSH into the control node and follow the steps below:
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+-
+To make Ansible run the playbook on a specific machine, update the /etc/ansible/hosts file:
+ 1) search [webserservers]
+ 2) add the following under the [webservers]:
+     Private IP address of Web-1 ansible_python_interpreter=/usr/bin/python3
+     Private IP address of Web-2 ansible_python_interpreter=/usr/bin/python3
+     .
+     .
+     .
+     Private IP address of Web-n ansible_python_interpreter=/usr/bin/python3
+     
+
+-    _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

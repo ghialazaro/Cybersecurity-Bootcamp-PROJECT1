@@ -5,7 +5,7 @@ The files in this repository were used to configure the network depicted below.
 
 https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/b74e6cff54406d69bd77fb9868c313f7baf90081/Network%20Diagram/Cloud%20Security%20with%20ELK%20Stack.png
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible Playbook file may be used to install only certain pieces of it, such as Filebeat.
 
 install-elk.yml
 
@@ -22,7 +22,7 @@ https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c
   
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -62,7 +62,8 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 1.41.54.222
 
 Machines within the network can only be accessed by the jump box.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+
+My home computer with IP address 1.41.54.222 can access the ELK VM via http on port 5601. 
 
 A summary of the access policies in place can be found in the table below.
 

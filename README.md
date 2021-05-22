@@ -9,7 +9,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 install-elk.yml
 
-  https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/3c7f7e5e080e1233ea9c5d550c0b6470b5710a7d/Scripts/Ansible/ELK/install-elk.yml
+/Scripts/Ansible/ELK/install-elk.yml
   
 filebeat-playbook.yml
   

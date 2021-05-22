@@ -3,10 +3,7 @@ Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
-Week13-Homework-PROJECT/Network Diagram/Cloud Security with ELK Stack.png
-
-
-Network%20Diagram/Cloud%20Security%20with%20ELK%20Stack.png
+https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/b74e6cff54406d69bd77fb9868c313f7baf90081/Network%20Diagram/Cloud%20Security%20with%20ELK%20Stack.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -16,7 +13,7 @@ install-elk.yml
   
 filebeat-playbook.yml
   
-  !https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml
+https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml
   
 metricbeat-playbook.yml
 

@@ -77,8 +77,7 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it reduces the potential for human errors and simplifies the process of configuring potentially thousands of machines all at once.
 
-
-The playbook implements the following tasks:
+The install-elk.yml playbook implements the following tasks:
 - Installs the docker.io, python3-pip and docker module
 - Increases the virtual memory
 - Downloads and launches the docker elk container
@@ -119,18 +118,44 @@ SSH into the control node and follow the steps below:
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 -
-To make Ansible run the playbook on a specific machine, update the /etc/ansible/hosts file:
- 1) search [webserservers]
- 2) add the following under the [webservers]:
-     Private IP address of Web-1 ansible_python_interpreter=/usr/bin/python3
-     Private IP address of Web-2 ansible_python_interpreter=/usr/bin/python3
-     .
-     .
-     .
-     Private IP address of Web-n ansible_python_interpreter=/usr/bin/python3
+To make Ansible run the playbook on the web servers, update the /etc/ansible/hosts file:
+ 1) Uncomment the [webserservers] header line.
+ 2) add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  For example:
+     10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+     10.0.0.5 ansible_python_interpreter=/usr/bin/python3
      
+To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
+1)  Uncomment the [elk] header line.
+2)  Add the internal IP address of the ELK server and add the python line beside the IP address.  For example:
+    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
--    _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
+To specify which machine to install the ELK server on:
+1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
+
+- name: Config elk VM with Docker
+  hosts: elk
+  remote_user: azadmin
+  become: true
+  tasks:
+
+To specify which machine to install the Filebeat on:
+1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
+
+- name: installing and launching filebeat
+  hosts: webservers
+  become: yes
+  tasks:
+  
+To specify which machine to install the Metricbeat on:
+1)  In the metricbeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
+
+- name: Install metric beat
+  hosts: webservers
+  become: true
+  tasks:
+  
+ 
+
+The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

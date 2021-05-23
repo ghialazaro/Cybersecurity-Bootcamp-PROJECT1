@@ -396,7 +396,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
       name: metricbeat
       enabled: yes
 ~~~
-13. Save the file.   The metricbeat-playbook.yml should look like this:  ![metricbeat-playbool.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/98d1fea75619ffe05f7e13e8a8230215705cc13f/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
+13. Save the file.   The metricbeat-playbook.yml should look like this:  ![metricbeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/98d1fea75619ffe05f7e13e8a8230215705cc13f/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
 
 14. Inside the Ansible container, run the command: ansible-playbook metricbeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
 

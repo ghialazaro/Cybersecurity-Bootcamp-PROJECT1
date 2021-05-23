@@ -318,7 +318,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 14. Inside the Ansible container, run the command: ansible-playbook filebeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
 
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/52ed9e153f87be82067b3f11787afb27f0b8d377/Images/filebeat-playbook.png
+![image](https://user-images.githubusercontent.com/84385348/119261490-03462680-bc1b-11eb-92e9-34898d0b0f78.png)
 
 15. To verify successful installation of Filebeat:
     - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
@@ -326,9 +326,6 @@ https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/52ed9e153f87be82067b3
     - Click on System Logs.  
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:
     
-
-16.  Click on System logs dashboard.   The dashboard should look like this:
-
 
 #### Installing and configuring Metricbeat on Web VMs using Ansible Playbook:
 

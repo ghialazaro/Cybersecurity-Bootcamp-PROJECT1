@@ -232,8 +232,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
         name: docker
         enabled: yes
 ~~~
-9.  The install-elk.yml should look like this:  ![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/e2e2ebe7071af22eeab2f2cc26707d795bc24c19/Scripts/Ansible/ELK/install-elk.yml)
-    Save the file.
+9.  Save the file. The install-elk.yml should look like this:  ![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/e2e2ebe7071af22eeab2f2cc26707d795bc24c19/Scripts/Ansible/ELK/install-elk.yml)
+    
 
 10.  Then run the command: ansible-playbook install-elk.yml. Make sure you are in the /etc/ansible folder.  The output should be as shown below:
 
@@ -314,7 +314,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
       name: filebeat
       enabled: yes
 ~~~
-13. Save the file.   The filebeat-playbook.yml should look like this:  
+13. Save the file.   The filebeat-playbook.yml should look like this:  ![filebeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7a02b597a53a19ce6c2149713b7857669881780e/Scripts/Ansible/Filebeat/filebeat-playbook.yml)
 
 To specify which machine to install the Metricbeat on:
 1)  In the metricbeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:

@@ -164,14 +164,14 @@ Installing and configuring ELK using Ansible Playbook:
 
 1. Create a file in /etc/ansible folder called install-elk.yml by running command:  nano install-elk.yml
 2. To specify which machine to install the ELK server on, specify the hosts as elk in the header of the install-elk.yml as shown below:
--------------------------------------------------------------------------------
+~~~
  --
   - name: Config elk VM with Docker     
     hosts: elk                          
     remote_user: azadmin                
     become: true                    
     tasks:             
---------------------------------------------------------------------------------
+~~~
 3. Install docker.io by adding the section the install-elk.yml:
 --------------------------------------------------------------------------------
   - name: Install docker.io

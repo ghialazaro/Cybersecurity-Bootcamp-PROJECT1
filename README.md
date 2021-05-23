@@ -244,9 +244,9 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 ![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 
-      
-To specify which machine to install the Filebeat on:
-1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
+#### Installing and configuring Filebeat using Ansible Playbook:      
+
+1)  Copy the Filebeat config file  to /etc/ansible folder:
 ~~~
   --
   - name: installing and launching filebeat

@@ -135,16 +135,9 @@ To configure your Jump box to run Docker containers and to install a container.
 
 ![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
--
-To make Ansible run the playbook on the web servers, update the /etc/ansible/hosts file:
- 1) Uncomment the [webserservers] header line.
- 2) Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
+11. To make Ansible run the playbook on the web servers, update the /etc/ansible/hosts file.
+    Uncomment the [webserservers] header line.
+    Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
     For example:
     ~~~
     [webservers]
@@ -152,16 +145,18 @@ To make Ansible run the playbook on the web servers, update the /etc/ansible/hos
     10.0.0.6 ansible_python_interpreter=/usr/bin/python3
     10.0.0.7 ansible_python_interpreter=/usr/bin/python3
     ~~~
+    
+12.  To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
+     Uncomment the [elk] header line.
+     Add the internal IP address of the ELK server and add the python line beside the IP address.  
+     For example:
+     ~~~
+     [elk]
+     10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+     ~~~
+     see updated /etc/ansible/hosts file:
      
-To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
-1)  Uncomment the [elk] header line.
-2)  Add the internal IP address of the ELK server and add the python line beside the IP address.  
-    For example:
-    ~~~
-    [elk]
-    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-    ~~~
-
+     
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
 ~~~

@@ -399,6 +399,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 13. Save the file.   The metricbeat-playbook.yml should look like this:  ![metricbeat-playbool.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/98d1fea75619ffe05f7e13e8a8230215705cc13f/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
 
 14. Inside the Ansible container, run the command: ansible-playbook metricbeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
+![image](https://user-images.githubusercontent.com/84385348/119262240-d5161600-bc1d-11eb-8656-af76dec03eeb.png)
 
 15. To verify successful installation of Filebeat:
     - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
@@ -409,5 +410,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
  ### Navigating ELK
 
-The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
+1. The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
+2. In the left hand pane of landing page, select the Dashboard.
+3. The Kibana dashboard will look like this:
+
 

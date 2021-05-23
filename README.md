@@ -72,9 +72,6 @@ The install-elk.yml playbook implements the following tasks:
 - Increases the virtual memory
 - Downloads and launches the docker elk container
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -222,14 +219,20 @@ Installing and configuring ELK using Ansible Playbook:
           - 9200:9200
           - 5044:5044   
 ~~~
-8.  Lastly, enable docker on boot:
+8.  Lastly, enable docker on boot by adding the following:
 ~~~
 - name: Enable service docker on boot
      systemd:
        name: docker
        enabled: yes
 ~~~
-        
+9.  Save the file.  Then run ansible-playbook install-elk.yml.   The output should be as shown below:
+
+10. The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
+![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
+
+       
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~

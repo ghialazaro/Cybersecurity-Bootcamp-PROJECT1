@@ -210,8 +210,7 @@ Installing and configuring ELK using Ansible Playbook:
 ~~~       
 7.  Then download and launch the docker elk container and publish the ports that ELK runs on, by adding the following:
 ~~~
-# Use docker_container module
-    - name: download and launch a docker elk container
+- name: download and launch a docker elk container
       docker_container:
         name: elk
         image: sebp/elk:761
@@ -221,8 +220,15 @@ Installing and configuring ELK using Ansible Playbook:
         published_ports:
           - 5601:5601
           - 9200:9200
-          - 5044:5044
-        
+          - 5044:5044   
+~~~
+8.  Lastly, enable docker on boot:
+~~~
+- name: Enable service docker on boot
+     systemd:
+       name: docker
+       enabled: yes
+~~~
         
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:

@@ -40,12 +40,10 @@ A jump box controls access to machines in the private network by allowing connec
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system use.
 
-Filebeat watches the log files, collects log events and forwards them to either Elasticsearch or Logstash.
+Filebeat watches the log files, collects log events and forwards to Elasticsearch.
 
-Metricbeat records the metrics and statistics that it collects and ships them to either Elasticsearch or Logstash.
+Metricbeat records the metrics and statistics that it collects and ships them to Elasticsearch.
 
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name         | Function | IP Address | Operating System |
 |--------------|----------|------------|------------------|
@@ -61,7 +59,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 1.41.54.222
 
-Machines within the network can only be accessed by the jump box.
+Machines within the network can only be accessed by the Jump Box
 
 My home computer with IP address 1.41.54.222 can access the ELK VM via http on port 5601. 
 
@@ -94,7 +92,7 @@ This ELK server is configured to monitor the following machines:
 | Web-2        | DVWA      | 10.0.0.6     |
 | Redundant-VM | DVWA      | 10.0.0.7     |
 
-We have installed the following Beats on these machines:
+I have installed the following Beats on these machines:
 
 | Name         | Filebeat installed | Metricbeat installed | 
 |--------------|--------------------|----------------------|
@@ -103,11 +101,10 @@ We have installed the following Beats on these machines:
 | Redundant-VM |        Yes         |        Yes           | 
 
 
-
 These Beats allow us to collect the following information from each machine:
 
-1.  Filebeat collects log events such as logon events
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+1.  Filebeat collects logs such as log events and logon events.  For example, if a user tried to SSH to one of the VMs using the wrong public key, this will be logged in the auth.log file and subsequently reported in Kibana.
+2.  Metric collects statistics such as CPU and RAM usage.   In the event of a CPU or memory spike, it will show in the Metric dashboard in the Kibana.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -134,11 +131,13 @@ To make the Ansible run the playbook on the ELK server, update the /etc/ansible/
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
 
-- name: Config elk VM with Docker
-  hosts: elk
-  remote_user: azadmin
-  become: true
-  tasks:
+----------------------------------------
+|- name: Config elk VM with Docker     |
+|  hosts: elk                          |
+|  remote_user: azadmin                |
+|  become: true                        |
+|  tasks:                              |
+----------------------------------------
 
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:

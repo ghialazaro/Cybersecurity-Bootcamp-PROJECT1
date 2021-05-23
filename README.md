@@ -125,10 +125,10 @@ To set up Ansible connections to VMs in the Virtual Network:
 ![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
 4. Update the /etc/ansible/hosts file.
-  - Run nano /etc/ansible/hosts
-  - Search for [webservers]
-  - Uncomment the [webserservers] header line.
-  - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
+   - Run nano /etc/ansible/hosts
+   - Search for [webservers]
+   - Uncomment the [webserservers] header line.
+   - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
 ---------------------------------------------------------------------------------------------------------------
           [webservers]
           10.0.0.5 ansible_python_interpreter=/usr/bin/python3
@@ -145,9 +145,9 @@ To set up Ansible connections to VMs in the Virtual Network:
 see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
 
 6. Next, update Ansible configuration file to use your administrator account for SSH connections.
-  - Open the file with nano /etc/ansible/ansible.cfg 
-  - Search for remote_user option.
-  - Uncomment the remote_user line and replace root with your VM admin username 
+   - Open the file with nano /etc/ansible/ansible.cfg 
+   - Search for remote_user option.
+   - Uncomment the remote_user line and replace root with your VM admin username 
 ----------------------------------------------------------------------------------------------------------------
           remote_user=azdmin
 ----------------------------------------------------------------------------------------------------------------    
@@ -162,7 +162,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 #### Installing and configuring ELK using Ansible Playbook:
 
-1. Create a file in /etc/ansible folder called install-elk.yml by running command:  nano install-elk.yml
+1. Create a file called install-elk.yml in /etc/ansible folder inside the Ansible container by running command:  nano install-elk.yml
+
 2. To specify which machine to install the ELK server on, specify the hosts as elk in the header of the install-elk.yml as shown below:
 ~~~
  --
@@ -246,7 +247,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 #### Installing and configuring Filebeat using Ansible Playbook:      
 
-1.  Copy the Filebeat config file ![filebeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6b42247084b29c7c3c2c0459493d9000fcb2c1c8/Scripts/Ansible/Filebeat/filebeat-config.yml) to /etc/ansible folder.
+1.  Inside the Ansible container, copy the Filebeat config file ![filebeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6b42247084b29c7c3c2c0459493d9000fcb2c1c8/Scripts/Ansible/Filebeat/filebeat-config.yml) to /etc/ansible folder.
 
 2.  Update the filebeat-config.yml file:
     - Search for output.elasticsearch:
@@ -257,13 +258,39 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     username: "elastic"
     password:  "changeme"
 -------------------------------------------------------------------------------------------------
-    
+3. In the same file:
+   - Search for setup.kibana:
+   - Replace the IP address with the IP address of the ELK VM, as shown below:
+-------------------------------------------------------------------------------------------------
+   setup.kibana:
+   hosts: "10.1.0.4:5601"
+-------------------------------------------------------------------------------------------------
+4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command:  filebeat-playbook.yml
+
+5. To specify which machine to install the Filebeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~
   --
   - name: installing and launching filebeat
     hosts: webservers
     become: yes
     tasks:
+~~~
+6. Next, add the command to download .deb file from artifacts.elastic.co.
+~~~
+  - name: download filebeat deb
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.2-amd64.deb
+~~~
+7. Then, add the command to install filebeat:
+~~~
+  - name: install filebeat deb
+    command: sudo dpkg -i filebeat-7.6.2-amd64.deb
+~~~
+8. Add a section to copy the filebeat-config.yml from the Ansible container to the Web VMs:
+~~~  
+  - name: drop in filebeat.yml
+    copy:
+      src: /etc/ansible/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
 ~~~
   
 To specify which machine to install the Metricbeat on:

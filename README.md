@@ -123,8 +123,9 @@ To make Ansible run the playbook on the web servers, update the /etc/ansible/hos
     For example:
     ~~~
     [webservers]
-    10.0.0.4 ansible_python_interpreter=/usr/bin/python3
     10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.7 ansible_python_interpreter=/usr/bin/python3
     ~~~
      
 To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:

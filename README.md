@@ -163,8 +163,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 Installing and configuring ELK using Ansible Playbook:
 
-1. Create a file in /etc/ansible/ folder called install-playbook.yml by running command:  nano install-elk.yml
-2.  To specify which machine to install the ELK server on, specify the hosts as elk in the header of the Ansible playbook as shown below:
+1. Create a file in /etc/ansible folder called install-elk.yml by running command:  nano install-elk.yml
+2. To specify which machine to install the ELK server on, specify the hosts as elk in the header of the install-elk.yml as shown below:
 ~~~
 --
 - name: Config elk VM with Docker     
@@ -239,9 +239,9 @@ Installing and configuring ELK using Ansible Playbook:
 
 ![image](https://user-images.githubusercontent.com/84385348/119249719-20a8cf80-bbde-11eb-8edc-b423b3d94c5b.png)
 
-11.  From the Ansible container, SSH to the ELK VM.   
+11.  After running the ansible-playbook to install ELK, SSH to the ELK VM from the Ansible container.   
 
-13.   The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+13.  The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 

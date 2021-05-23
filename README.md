@@ -92,19 +92,19 @@ This ELK server is configured to monitor the following machines:
 | Web-2        | DVWA      | 10.0.0.6     |
 | Redundant-VM | DVWA      | 10.0.0.7     |
 
-I have installed the following Beats on these machines:
+The following Beats have been installed on these machines:
 
-| Name         | Filebeat installed | Metricbeat installed | 
-|--------------|--------------------|----------------------|
-| Web-1        |        Yes         |        Yes           |
-| Web-2        |        Yes         |        Yes           | 
-| Redundant-VM |        Yes         |        Yes           | 
-
+| Name         |Beats installed         | 
+|--------------|------------------------|
+| Web-1        | Filebeat, Metricbeat   |  
+| Web-2        | Filebeat, Metricbeat   | 
+| Redundant-VM | Filebeat, Metricbeat   | 
 
 These Beats allow us to collect the following information from each machine:
 
 1.  Filebeat collects logs such as log events and logon events.  For example, if a user tried to SSH to one of the VMs using the wrong public key, this will be logged in the auth.log file and subsequently reported in Kibana.
-2.  Metric collects statistics such as CPU and RAM usage.   In the event of a CPU or memory spike, it will show in the Metric dashboard in the Kibana.
+
+3.  Metric collects statistics such as CPU and RAM usage.   In the event of a CPU or memory spike, it will show in the Metric dashboard in the Kibana.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 

@@ -131,7 +131,6 @@ To configure your Jump box to run Docker containers and to install a container.
   - Search for [webservers]
   - Uncomment the [webserservers] header line.
   - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
-          For example:
 ~~~
           [webservers]
           10.0.0.5 ansible_python_interpreter=/usr/bin/python3
@@ -140,9 +139,8 @@ To configure your Jump box to run Docker containers and to install a container.
 ~~~
     
 12. To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
-    12.a  In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.
-    12.b  Add the internal IP address of the ELK server and add the python line beside the IP address.  
-          For example:
+  - In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.
+  - Add the internal IP address of the ELK server and add the python line beside the IP address.  
 ~~~
           [elk]
           10.1.0.4 ansible_python_interpreter=/usr/bin/python3
@@ -151,10 +149,9 @@ To configure your Jump box to run Docker containers and to install a container.
 see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
 
 13. Next, update Ansible configuration file to use your administrator account for SSH connections.
-    13.a  Open the file with nano /etc/ansible/ansible.cfg 
-    13.b  Search for remote_user option.
-    13.c  Uncomment the remote_user line and replace root with your VM admin username 
-          For example:
+  - Open the file with nano /etc/ansible/ansible.cfg 
+  - Search for remote_user option.
+  - Uncomment the remote_user line and replace root with your VM admin username 
 ~~~
           remote_user=azdmin
 ~~~

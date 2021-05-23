@@ -325,7 +325,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     - Click on Add log data under Logs
     - Click on System Logs.  
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:
-    
+    ![image](https://user-images.githubusercontent.com/84385348/119261530-2a045d00-bc1b-11eb-86f6-28c701f03db0.png)
+
 
 #### Installing and configuring Metricbeat on Web VMs using Ansible Playbook:
 

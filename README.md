@@ -159,28 +159,9 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
   
 ### Using the Playbook    
 
-4. Update the /etc/ansible/hosts file.
-  - Run nano /etc/ansible/hosts
-  - Search for [webservers]
-  - Uncomment the [webserservers] header line.
-  - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
-~~~
-          [webservers]
-          10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-          10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-          10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-~~~
-    
-12. In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.  Add the internal IP address of the ELK server and add the python line beside the IP address.  
-~~~
-          [elk]
-          10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-~~~
-
-see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
-
-To specify which machine to install the ELK server on:
-1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
+Installing and configuring ELK using Ansible Playbook:
+1. Create a file in /etc/ansible/ folder called install-playbook.yml by running command:  nano install-playbook.yml
+2.  To specify which machine to install the ELK server on, specify the hosts as elk in the header of the Ansible playbook as shown below:
 ~~~
 --
 - name: Config elk VM with Docker     
@@ -189,7 +170,7 @@ To specify which machine to install the ELK server on:
   become: true                    
   tasks:             
 ~~~
-
+3. 
 
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:

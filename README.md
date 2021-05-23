@@ -244,7 +244,6 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 ![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 
-14.  Navigate to the ELK url:  http://52.184.196.183:5601/app/kibana
 
 #### Installing and configuring Filebeat on Web VMs using Ansible Playbook:      
 
@@ -322,7 +321,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 15. To verify successful installation of Filebeat:
     - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
     - Click on Add log data under Logs
-    - Click on System Logs.  Scroll to Step 5: Module Data and click on Check Data, as shown below:
+    - Click on System Logs.  
+    - Scroll to Step 5: Module Data and click on Check Data, as shown below:
     
 
 16.  Click on System logs dashboard.   The dashboard should look like this:
@@ -397,26 +397,19 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
       name: metricbeat
       enabled: yes
 ~~~
-13. Save the file.   The metricbeat-playbook.yml should look like this:  
+13. Save the file.   The metricbeat-playbook.yml should look like this:  ![metricbeat-playbool.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/98d1fea75619ffe05f7e13e8a8230215705cc13f/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
 
 14. Inside the Ansible container, run the command: ansible-playbook metricbeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
 
 15. To verify successful installation of Filebeat:
     - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
-    - Click on Add log data under Logs
-    - Click on System Logs.  Scroll to Step 5: Module Data and click on Check Data, as shown below:
+    - Click on Add metric data under Metrics
+    - Click on System metrics.  
+    - Scroll to Step 5: Module Data and click on Check Data, as shown below:
     
 
-16.  Click on System logs dashboard.   The dashboard should look like this:
-1)  In the metricbeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
-~~~
---
-- name: Install metric beat
-  hosts: webservers
-  become: true
-  tasks:
-~~~
- 
+
+### Navigating ELK
 
 The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 

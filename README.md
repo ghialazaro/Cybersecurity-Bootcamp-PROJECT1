@@ -5,22 +5,13 @@ The files in this repository were used to configure the network depicted below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119246995-82ab0a00-bbc9-11eb-9671-2f7da15e1d6f.png)
 
-
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible Playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-install-elk.yml
-
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6713bfd29db35878645abc59aec25516d9ae8cad/Scripts/Ansible/ELK/install-elk.yml
+![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6713bfd29db35878645abc59aec25516d9ae8cad/Scripts/Ansible/ELK/install-elk.yml)
   
-filebeat-playbook.yml
+![filebeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml)
   
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml
-  
-metricbeat-playbook.yml
-
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c8b3afacf94e94bd184b/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml
-
-  
+![metricbeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c8b3afacf94e94bd184b/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -83,7 +74,7 @@ The install-elk.yml playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-
+![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -108,10 +99,8 @@ These Beats allow us to collect the following information from each machine:
 
 3.  Metric collects statistics such as CPU and RAM usage.   In the event of a CPU or memory spike, it will show in the Metric dashboard in the Kibana.
 
-### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. 
-
-To configure your Jump box to run Docker containers and to install a container.
+### Install and run containers using Docker.
+To configure your Jump box to run Docker containers and to install a container:
 
 1. SSH into your Jump box.
 2. Run sudo apt update then sudo apt install docker.io
@@ -119,47 +108,60 @@ To configure your Jump box to run Docker containers and to install a container.
 4. Run sudo docker pull cyberxsecurity/ansible.
 5. By running command:  sudo docker ps  -a, it will list all available containers as shown below:
 
+![image](https://user-images.githubusercontent.com/84385348/119247525-935d7f00-bbcd-11eb-9b16-da8cf99d7119.png)
 
 6. Select any container from the available list.   Start using the container by typing the command:  sudo docker start [container_name]
 7. Get a shell in your container using docker attach [container_name]
-8. Run ssh-keygen to create an SSH key as shown below.
 
-9. Run cat .ssh/id_rsa.pub to display your public key.
+### Set up Ansible connections to VMs
+To set up Ansible connections to VMs in the Virtual Network:
+1. Run ssh-keygen to create an SSH key as shown below.
 
-10.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
+![image](https://user-images.githubusercontent.com/84385348/119247532-a53f2200-bbcd-11eb-8264-f66e91f8da4a.png)
 
+2. Run cat .ssh/id_rsa.pub to display your public key.
 
+![image](https://user-images.githubusercontent.com/84385348/119247547-be47d300-bbcd-11eb-99d5-e0219bb7b96d.png)
 
+3.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
 
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
--
-To make Ansible run the playbook on the web servers, update the /etc/ansible/hosts file:
- 1) Uncomment the [webserservers] header line.
- 2) Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
-    For example:
-    ~~~
-    [webservers]
-    10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-    10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-    10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-    ~~~
-     
-To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
-1)  Uncomment the [elk] header line.
-2)  Add the internal IP address of the ELK server and add the python line beside the IP address.  
-    For example:
-    ~~~
-    [elk]
-    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-    ~~~
+4. Update the /etc/ansible/hosts file.
+  - Run nano /etc/ansible/hosts
+  - Search for [webservers]
+  - Uncomment the [webserservers] header line.
+  - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
+~~~
+          [webservers]
+          10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+          10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+          10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+~~~
+    
+5. In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.  Add the internal IP address of the ELK server and add the python line beside the IP address.  
+~~~
+          [elk]
+          10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+~~~
 
-To specify which machine to install the ELK server on:
-1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
+see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
+
+6. Next, update Ansible configuration file to use your administrator account for SSH connections.
+  - Open the file with nano /etc/ansible/ansible.cfg 
+  - Search for remote_user option.
+  - Uncomment the remote_user line and replace root with your VM admin username 
+~~~
+          remote_user=azdmin
+~~~
+    
+see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7fce973fc1b1d53a8a43ff0a7df1f5ce647e4ab8/Scripts/Ansible/Ansible%20config/ansible.cfg)
+  
+### Using the Playbook    
+
+Installing and configuring ELK using Ansible Playbook:
+1. Create a file in /etc/ansible/ folder called install-playbook.yml by running command:  nano install-elk.yml
+2.  To specify which machine to install the ELK server on, specify the hosts as elk in the header of the Ansible playbook as shown below:
 ~~~
 --
 - name: Config elk VM with Docker     
@@ -168,8 +170,66 @@ To specify which machine to install the ELK server on:
   become: true                    
   tasks:             
 ~~~
-
-
+3. Install docker.io by adding the section the install-elk.yml:
+~~~
+- name: Install docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: present
+      # Use apt module
+ ~~~
+4. Install python3-pip by adding below section to the install-elk.yml:
+~~~
+- name: Install python3-pip
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+      # Use pip module (It will default to pip3)
+~~~
+5. Then, add below section to install the docker module:
+~~~
+- name: Install Docker module
+      pip:
+        name: docker
+        state: present
+~~~
+6. Next, increase the virtual memory by adding the below section to the install-elk.yml:
+~~~
+- name: Increase virtual memory
+      command: sysctl -w vm.max_map_count=262144
+      # Use sysctl module
+    - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: 524288
+        state: present
+        reload: yes
+~~~       
+7.  Then download and launch the docker elk container and publish the ports that ELK runs on, by adding the following:
+~~~
+- name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        # Please list the ports that ELK runs on
+        published_ports:
+          - 5601:5601
+          - 9200:9200
+          - 5044:5044   
+~~~
+8.  Lastly, enable docker on boot:
+~~~
+- name: Enable service docker on boot
+     systemd:
+       name: docker
+       enabled: yes
+~~~
+        
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~
@@ -193,4 +253,3 @@ To specify which machine to install the Metricbeat on:
 
 The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

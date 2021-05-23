@@ -262,8 +262,8 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
    - Search for setup.kibana:
    - Replace the IP address with the IP address of the ELK VM, as shown below:
 -------------------------------------------------------------------------------------------------
-   setup.kibana:
-   hosts: "10.1.0.4:5601"
+    setup.kibana:
+    hosts: "10.1.0.4:5601"
 -------------------------------------------------------------------------------------------------
 4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command:  filebeat-playbook.yml
 
@@ -292,7 +292,30 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
       src: /etc/ansible/filebeat-config.yml
       dest: /etc/filebeat/filebeat.yml
 ~~~
-  
+9. Next, add the command to enable and configure filebeat:
+~~~
+  - name: enable and configure system module
+    command: filebeat modules enable system
+~~~
+10. Then, add the command to setup filebeat:
+~~~
+  - name: setup filebeat
+    command: filebeat setup
+~~~
+11. Next, add the command to start filebeat service:
+~~~
+  - name: start filebeat service
+    command: service filebeat start
+~~~
+12. Lastly, add the command to enable filebeat service on boot:
+~~~
+  - name: enable service filebeat on boot
+    systemd:
+      name: filebeat
+      enabled: yes
+~~~
+13. Save the file.   The filebeat-playbook.yml should look like this:  
+
 To specify which machine to install the Metricbeat on:
 1)  In the metricbeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~

@@ -147,10 +147,10 @@ To configure your Jump box to run Docker containers and to install a container.
           [elk]
           10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ~~~
-     see updated /etc/ansible/hosts file:
-     ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)
-     
- 13. Next, update Ansible configuration file to use your administrator account for SSH connections.
+
+see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
+
+13. Next, update Ansible configuration file to use your administrator account for SSH connections.
     13.a  Open the file with nano /etc/ansible/ansible.cfg 
     13.b  Search for remote_user option.
     13.c  Uncomment the remote_user line and replace root with your admin username using this format: - remote_user = <user-name-for-web-VMs>
@@ -158,7 +158,8 @@ To configure your Jump box to run Docker containers and to install a container.
 ~~~
           remote_user=azdmin
 ~~~
-    see updated /etc/ansible/ansible.cfg fie:
+    
+see updated /etc/ansible/ansible.cfg fie:
   
      
 To specify which machine to install the ELK server on:

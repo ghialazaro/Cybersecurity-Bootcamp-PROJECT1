@@ -129,7 +129,7 @@ To configure your Jump box to run Docker containers and to install a container.
 
 9. Run cat .ssh/id_rsa.pub to display your public key.
 
-
+![image](https://user-images.githubusercontent.com/84385348/119247547-be47d300-bbcd-11eb-99d5-e0219bb7b96d.png)
 
 10.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
 

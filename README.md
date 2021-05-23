@@ -138,38 +138,35 @@ To make the Ansible run the playbook on the ELK server, update the /etc/ansible/
 
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
-
----
+~~~
 --
 - name: Config elk VM with Docker     
   hosts: elk                          
   remote_user: azadmin                
   become: true                    
   tasks:             
----
+~~~
 
 
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
-
----
+~~~
 --
 - name: installing and launching filebeat
   hosts: webservers
   become: yes
   tasks:
----
+~~~
   
 To specify which machine to install the Metricbeat on:
 1)  In the metricbeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
-
----
+~~~
 --
 - name: Install metric beat
   hosts: webservers
   become: true
   tasks:
----
+~~~
  
 
 The URL to navigate ELK is http://52.184.196.183:5601/app/kibana

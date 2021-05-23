@@ -137,10 +137,10 @@ To set up Ansible connections to VMs in the Virtual Network:
 ---------------------------------------------------------------------------------------------------------------
     
 5. In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.  Add the internal IP address of the ELK server and add the python line beside the IP address.  
-~~~
+----------------------------------------------------------------------------------------------------------------
           [elk]
           10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-~~~
+----------------------------------------------------------------------------------------------------------------
 
 see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
 
@@ -148,10 +148,9 @@ see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro
   - Open the file with nano /etc/ansible/ansible.cfg 
   - Search for remote_user option.
   - Uncomment the remote_user line and replace root with your VM admin username 
-~~~
+----------------------------------------------------------------------------------------------------------------
           remote_user=azdmin
-~~~
-    
+----------------------------------------------------------------------------------------------------------------    
 see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7fce973fc1b1d53a8a43ff0a7df1f5ce647e4ab8/Scripts/Ansible/Ansible%20config/ansible.cfg)
 
 7.  To test the Ansible connections to VMs, run the command:  ansible all -m ping.  A successful output is shown below:
@@ -167,31 +166,31 @@ Installing and configuring ELK using Ansible Playbook:
 2. To specify which machine to install the ELK server on, specify the hosts as elk in the header of the install-elk.yml as shown below:
 -------------------------------------------------------------------------------
  --
- - name: Config elk VM with Docker     
-   hosts: elk                          
-   remote_user: azadmin                
-   become: true                    
-   tasks:             
+  - name: Config elk VM with Docker     
+    hosts: elk                          
+    remote_user: azadmin                
+    become: true                    
+    tasks:             
 --------------------------------------------------------------------------------
 3. Install docker.io by adding the section the install-elk.yml:
-~~~
-- name: Install docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker.io
-        state: present
-      # Use apt module
- ~~~
+--------------------------------------------------------------------------------
+  - name: Install docker.io
+        apt:
+          update_cache: yes
+          force_apt_get: yes
+          name: docker.io
+          state: present
+          # Use apt module
+--------------------------------------------------------------------------------
 4. Install python3-pip by adding below section to the install-elk.yml:
-~~~
-- name: Install python3-pip
-      apt:
-        force_apt_get: yes
-        name: python3-pip
-        state: present
-      # Use pip module (It will default to pip3)
-~~~
+--------------------------------------------------------------------------------
+  - name: Install python3-pip
+        apt:
+          force_apt_get: yes
+          name: python3-pip
+          state: present
+          # Use pip module (It will default to pip3)
+--------------------------------------------------------------------------------
 5. Then, add below section to install the docker module:
 ~~~
 - name: Install Docker module

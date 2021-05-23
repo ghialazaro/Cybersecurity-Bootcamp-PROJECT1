@@ -48,20 +48,19 @@ Metricbeat records the metrics and statistics that it collects and ships them to
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-1.41.54.222
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from my home IP address.
 
 Machines within the network can only be accessed by the Jump Box
 
-My home computer with IP address 1.41.54.222 can access the ELK VM via http on port 5601. 
+My home IP address can access the ELK VM via http on port 5601. 
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 1.41.54.222          |
-| ELK      | Yes                 | 1.41.54.222          |
-|          |                     |                      |
+| Jump Box | Yes                 | home IP address      |
+| ELK      | Yes                 | home IP address      |
+
 
 ### Elk Configuration
 

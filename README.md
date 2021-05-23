@@ -156,6 +156,7 @@ To configure your Jump box to run Docker containers and to install a container.
      ~~~
      see updated /etc/ansible/hosts file:
      
+     ![file](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)
      
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:

@@ -125,33 +125,32 @@ To set up Ansible connections to VMs in the Virtual Network:
 ![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
 4. Update the /etc/ansible/hosts file.
-  - Run nano /etc/ansible/hosts
-  - Search for [webservers]
-  - Uncomment the [webserservers] header line.
-  - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
-~~~
+   - Run nano /etc/ansible/hosts
+   - Search for [webservers]
+   - Uncomment the [webserservers] header line.
+   - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
+---------------------------------------------------------------------------------------------------------------
           [webservers]
           10.0.0.5 ansible_python_interpreter=/usr/bin/python3
           10.0.0.6 ansible_python_interpreter=/usr/bin/python3
           10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-~~~
+---------------------------------------------------------------------------------------------------------------
     
 5. In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.  Add the internal IP address of the ELK server and add the python line beside the IP address.  
-~~~
+----------------------------------------------------------------------------------------------------------------
           [elk]
           10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-~~~
+----------------------------------------------------------------------------------------------------------------
 
 see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
 
 6. Next, update Ansible configuration file to use your administrator account for SSH connections.
-  - Open the file with nano /etc/ansible/ansible.cfg 
-  - Search for remote_user option.
-  - Uncomment the remote_user line and replace root with your VM admin username 
-~~~
+   - Open the file with nano /etc/ansible/ansible.cfg 
+   - Search for remote_user option.
+   - Uncomment the remote_user line and replace root with your VM admin username 
+----------------------------------------------------------------------------------------------------------------
           remote_user=azdmin
-~~~
-    
+----------------------------------------------------------------------------------------------------------------    
 see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7fce973fc1b1d53a8a43ff0a7df1f5ce647e4ab8/Scripts/Ansible/Ansible%20config/ansible.cfg)
 
 7.  To test the Ansible connections to VMs, run the command:  ansible all -m ping.  A successful output is shown below:
@@ -161,104 +160,256 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
   
 ### Using the Playbook    
 
-Installing and configuring ELK using Ansible Playbook:
+#### Installing and configuring ELK using Ansible Playbook:
 
-1. Create a file in /etc/ansible/ folder called install-playbook.yml by running command:  nano install-elk.yml
-2.  To specify which machine to install the ELK server on, specify the hosts as elk in the header of the Ansible playbook as shown below:
+1. Create a file called install-elk.yml in /etc/ansible folder inside the Ansible container by running command:  nano install-elk.yml
+
+2. To specify which machine to install the ELK server on, specify the hosts as elk in the header of the install-elk.yml as shown below:
 ~~~
---
-- name: Config elk VM with Docker     
-  hosts: elk                          
-  remote_user: azadmin                
-  become: true                    
-  tasks:             
+ --
+ - name: Config elk VM with Docker     
+   hosts: elk                          
+   remote_user: azadmin                
+   become: true                    
+   tasks:             
 ~~~
 3. Install docker.io by adding the section the install-elk.yml:
 ~~~
-- name: Install docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker.io
-        state: present
-      # Use apt module
- ~~~
+  - name: Install docker.io
+        apt:
+          update_cache: yes
+          force_apt_get: yes
+          name: docker.io
+          state: present
+          # Use apt module
+~~~
 4. Install python3-pip by adding below section to the install-elk.yml:
 ~~~
-- name: Install python3-pip
-      apt:
-        force_apt_get: yes
-        name: python3-pip
-        state: present
-      # Use pip module (It will default to pip3)
+  - name: Install python3-pip
+        apt:
+          force_apt_get: yes
+          name: python3-pip
+          state: present
+          # Use pip module (It will default to pip3)
 ~~~
 5. Then, add below section to install the docker module:
 ~~~
-- name: Install Docker module
-      pip:
-        name: docker
-        state: present
+  - name: Install Docker module
+        pip:
+          name: docker
+          state: present
 ~~~
 6. Next, increase the virtual memory by adding the below section to the install-elk.yml:
 ~~~
-- name: Increase virtual memory
-      command: sysctl -w vm.max_map_count=262144
-      # Use sysctl module
-    - name: Use more memory
-      sysctl:
-        name: vm.max_map_count
-        value: 524288
-        state: present
-        reload: yes
+  - name: Increase virtual memory
+        command: sysctl -w vm.max_map_count=262144
+        # Use sysctl module
+      - name: Use more memory
+        sysctl:
+          name: vm.max_map_count
+          value: 524288
+          state: present
+          reload: yes
 ~~~       
 7.  Then download and launch the docker elk container and publish the ports that ELK runs on, by adding the following:
 ~~~
-- name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        # Please list the ports that ELK runs on
-        published_ports:
-          - 5601:5601
-          - 9200:9200
-          - 5044:5044   
+  - name: download and launch a docker elk container
+        docker_container:
+          name: elk
+          image: sebp/elk:761
+          state: started
+          restart_policy: always
+          # Please list the ports that ELK runs on
+          published_ports:
+            - 5601:5601
+            - 9200:9200
+            - 5044:5044   
 ~~~
 8.  Lastly, enable docker on boot by adding the following:
 ~~~
-- name: Enable service docker on boot
-     systemd:
-       name: docker
-       enabled: yes
+  - name: Enable service docker on boot
+      systemd:
+        name: docker
+        enabled: yes
 ~~~
-9.  Save the file.  Then run ansible-playbook install-elk.yml.   The output should be as shown below:
+9.  Save the file. The install-elk.yml should look like this:  ![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/e2e2ebe7071af22eeab2f2cc26707d795bc24c19/Scripts/Ansible/ELK/install-elk.yml)
+    
+10. Still inside the Ansible container, run the command: ansible-playbook install-elk.yml. Make sure you are in the /etc/ansible folder.  The output should be as shown below:
 
-10. The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+![image](https://user-images.githubusercontent.com/84385348/119249719-20a8cf80-bbde-11eb-8edc-b423b3d94c5b.png)
+
+11.  After running the ansible-playbook to install ELK, SSH to the ELK VM from the Ansible container.   
+
+13.  The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 
-       
-To specify which machine to install the Filebeat on:
-1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
+
+#### Installing and configuring Filebeat on Web VMs using Ansible Playbook:      
+
+1.  Inside the Ansible container, copy the Filebeat config file ![filebeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6b42247084b29c7c3c2c0459493d9000fcb2c1c8/Scripts/Ansible/Filebeat/filebeat-config.yml) to /etc/ansible folder.
+
+2.  Update the filebeat-config.yml file:
+    - Search for output.elasticsearch:
+    - Replace the IP address with the IP address of the ELK VM, as shown below:
+-------------------------------------------------------------------------------------------------
+    output.elasticsearch:
+    hosts: ["10.1.0.4:9200"]
+    username: "elastic"
+    password:  "changeme"
+-------------------------------------------------------------------------------------------------
+3. In the same file:
+   - Search for setup.kibana:
+   - Replace the IP address with the IP address of the ELK VM, as shown below:
+-------------------------------------------------------------------------------------------------
+    setup.kibana:
+    hosts: "10.1.0.4:5601"
+-------------------------------------------------------------------------------------------------
+4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command: nano filebeat-playbook.yml
+
+5. To specify which machine to install the Filebeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~
---
-- name: installing and launching filebeat
-  hosts: webservers
-  become: yes
-  tasks:
+  --
+  - name: installing and launching filebeat
+    hosts: webservers
+    become: yes
+    tasks:
 ~~~
-  
-To specify which machine to install the Metricbeat on:
-1)  In the metricbeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
+6. Next, add the command to download .deb file from artifacts.elastic.co.
 ~~~
---
-- name: Install metric beat
-  hosts: webservers
-  become: true
-  tasks:
+  - name: download filebeat deb
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.2-amd64.deb
 ~~~
- 
+7. Then, add the command to install filebeat:
+~~~
+  - name: install filebeat deb
+    command: sudo dpkg -i filebeat-7.6.2-amd64.deb
+~~~
+8. Add a section to copy the filebeat-config.yml from the Ansible container to the Web VMs:
+~~~  
+  - name: drop in filebeat.yml
+    copy:
+      src: /etc/ansible/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+~~~
+9. Next, add the command to enable and configure filebeat:
+~~~
+  - name: enable and configure system module
+    command: filebeat modules enable system
+~~~
+10. Then, add the command to setup filebeat:
+~~~
+  - name: setup filebeat
+    command: filebeat setup
+~~~
+11. Next, add the command to start filebeat service:
+~~~
+  - name: start filebeat service
+    command: service filebeat start
+~~~
+12. Lastly, add the command to enable filebeat service on boot:
+~~~
+  - name: enable service filebeat on boot
+    systemd:
+      name: filebeat
+      enabled: yes
+~~~
+13. Save the file.   The filebeat-playbook.yml should look like this:  ![filebeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7a02b597a53a19ce6c2149713b7857669881780e/Scripts/Ansible/Filebeat/filebeat-playbook.yml)
+
+14. Inside the Ansible container, run the command: ansible-playbook filebeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
+
+15. To verify successful installation of Filebeat:
+    - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
+    - Click on Add log data under Logs
+    - Click on System Logs.  
+    - Scroll to Step 5: Module Data and click on Check Data, as shown below:
+    
+
+16.  Click on System logs dashboard.   The dashboard should look like this:
+
+
+#### Installing and configuring Metricbeat on Web VMs using Ansible Playbook:
+
+1.  Inside the Ansible container, copy the Metricbeat config file ![metricbeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/dfb9ce83205ec87d59662e960607f3a99f620835/Scripts/Ansible/Metricbeat/metricbeat-config.yml) to /etc/ansible folder
+
+2.  Update the metricbeat-config.yml file:
+    - Search for output.elasticsearch:
+    - Replace the IP address with the IP address of the ELK VM, as shown below:
+-------------------------------------------------------------------------------------------------
+    output.elasticsearch:
+    hosts: ["10.1.0.4:9200"]
+    username: "elastic"
+    password:  "changeme"
+-------------------------------------------------------------------------------------------------
+3. In the same file:
+   - Search for setup.kibana:
+   - Replace the IP address with the IP address of the ELK VM, as shown below:
+-------------------------------------------------------------------------------------------------
+    setup.kibana:
+    hosts: "10.1.0.4:5601"
+-------------------------------------------------------------------------------------------------
+4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command: nano metricbeat-playbook.yml
+
+5. To specify which machine to install the Metricbeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
+~~~
+  ---
+  - name: Install metric beat
+    hosts: webservers
+    become: true
+    tasks:
+~~~
+6. Next, add the command to download metricbeat from artifacts.elastic.co.
+~~~
+  - name: Download metricbeat
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
+~~~
+7. Then, add the command to install metricbeat:
+~~~
+  - name: install metricbeat
+    command: dpkg -i metricbeat-7.6.1-amd64.deb
+~~~
+8. Add a section to copy the metricbeat-config.yml from the Ansible container to the Web VMs:
+~~~  
+   - name: drop in metricbeat config
+     copy:
+       src: /etc/ansible/metricbeat-config.yml
+       dest: /etc/metricbeat/metricbeat.yml
+~~~
+9. Next, add the command to enable and configure metricbeat:
+~~~
+  - name: enable and configure system module
+    command: metricbeat modules enable system
+~~~
+10. Then, add the command to setup metricbeat:
+~~~
+  - name: setup metricbeat
+    command: metricbeat setup
+~~~
+11. Next, add the command to start metricbeat service:
+~~~
+  - name: start metricbeat service
+    command: service metricbeat start
+~~~
+12. Lastly, add the command to enable metricbeat service on boot:
+~~~
+  - name: enable service metricbeat on boot
+    systemd:
+      name: metricbeat
+      enabled: yes
+~~~
+13. Save the file.   The metricbeat-playbook.yml should look like this:  ![metricbeat-playbool.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/98d1fea75619ffe05f7e13e8a8230215705cc13f/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
+
+14. Inside the Ansible container, run the command: ansible-playbook metricbeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
+
+15. To verify successful installation of Filebeat:
+    - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
+    - Click on Add metric data under Metrics
+    - Click on System metrics.  
+    - Scroll to Step 5: Module Data and click on Check Data, as shown below:
+    
+
+
+### Navigating ELK
 
 The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 

@@ -327,7 +327,6 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:
     ![image](https://user-images.githubusercontent.com/84385348/119261530-2a045d00-bc1b-11eb-86f6-28c701f03db0.png)
 
-
 #### Installing and configuring Metricbeat on Web VMs using Ansible Playbook:
 
 1.  Inside the Ansible container, copy the Metricbeat config file ![metricbeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/dfb9ce83205ec87d59662e960607f3a99f620835/Scripts/Ansible/Metricbeat/metricbeat-config.yml) to /etc/ansible folder
@@ -406,10 +405,9 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     - Click on Add metric data under Metrics
     - Click on System metrics.  
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:
-    
+    ![image](https://user-images.githubusercontent.com/84385348/119261657-ba42a200-bc1b-11eb-813b-63d72c69cd1d.png)
 
-
-### Navigating ELK
+ ### Navigating ELK
 
 The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 

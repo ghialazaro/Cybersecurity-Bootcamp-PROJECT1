@@ -119,6 +119,7 @@ To configure your Jump box to run Docker containers and to install a container.
 4. Run sudo docker pull cyberxsecurity/ansible.
 5. By running command:  sudo docker ps  -a, it will list all available containers as shown below:
 
+![image](https://user-images.githubusercontent.com/84385348/119247525-935d7f00-bbcd-11eb-9b16-da8cf99d7119.png)
 
 6. Select any container from the available list.   Start using the container by typing the command:  sudo docker start [container_name]
 7. Get a shell in your container using docker attach [container_name]

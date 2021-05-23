@@ -161,7 +161,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
   
 ### Using the Playbook    
 
-####Installing and configuring ELK using Ansible Playbook:
+Installing and configuring ELK using Ansible Playbook:
 
 1. Create a file in /etc/ansible/ folder called install-playbook.yml by running command:  nano install-elk.yml
 2.  To specify which machine to install the ELK server on, specify the hosts as elk in the header of the Ansible playbook as shown below:

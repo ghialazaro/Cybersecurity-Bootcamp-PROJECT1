@@ -121,20 +121,20 @@ To make Ansible run the playbook on the web servers, update the /etc/ansible/hos
  1) Uncomment the [webserservers] header line.
  2) Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
     For example:
-    ---
+    ~~~
     [webservers]
     10.0.0.4 ansible_python_interpreter=/usr/bin/python3
     10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-    ---
+    ~~~
      
 To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
 1)  Uncomment the [elk] header line.
 2)  Add the internal IP address of the ELK server and add the python line beside the IP address.  
     For example:
-    ---
+    ~~~
     [elk]
     10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-    ---
+    ~~~
 
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:

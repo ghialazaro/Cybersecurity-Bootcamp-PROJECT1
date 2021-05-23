@@ -127,10 +127,10 @@ To configure your Jump box to run Docker containers and to install a container.
 ![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
 11. To make Ansible run the playbook on the web servers, update the /etc/ansible/hosts file.
-..11.a  Run nano /etc/ansible/hosts
-    11.b  Search for [webservers]
-    11.c  Uncomment the [webserservers] header line.
-    11.d  Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
+  - Run nano /etc/ansible/hosts
+  - Search for [webservers]
+  - Uncomment the [webserservers] header line.
+  - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
           For example:
 ~~~
           [webservers]

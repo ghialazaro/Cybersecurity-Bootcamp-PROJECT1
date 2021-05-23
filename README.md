@@ -330,9 +330,9 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 #### Installing and configuring Metricbeat on Web VMs using Ansible Playbook:
 
-1.  Inside the Ansible container, copy the Metricbeat config file 
+1.  Inside the Ansible container, copy the Metricbeat config file ![metricbeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/dfb9ce83205ec87d59662e960607f3a99f620835/Scripts/Ansible/Metricbeat/metricbeat-config.yml) to /etc/ansible folder
 
-2.  Update the filebeat-config.yml file:
+2.  Update the metricbeat-config.yml file:
     - Search for output.elasticsearch:
     - Replace the IP address with the IP address of the ELK VM, as shown below:
 -------------------------------------------------------------------------------------------------
@@ -348,58 +348,58 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     setup.kibana:
     hosts: "10.1.0.4:5601"
 -------------------------------------------------------------------------------------------------
-4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command:  filebeat-playbook.yml
+4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command:  metricbeat-playbook.yml
 
-5. To specify which machine to install the Filebeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
+5. To specify which machine to install the Metricbeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~
-  --
-  - name: installing and launching filebeat
+  ---
+  - name: Install metric beat
     hosts: webservers
-    become: yes
+    become: true
     tasks:
 ~~~
-6. Next, add the command to download .deb file from artifacts.elastic.co.
+6. Next, add the command to download metricbeat from artifacts.elastic.co.
 ~~~
-  - name: download filebeat deb
-    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.2-amd64.deb
+  - name: Download metricbeat
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
 ~~~
-7. Then, add the command to install filebeat:
+7. Then, add the command to install metricbeat:
 ~~~
-  - name: install filebeat deb
-    command: sudo dpkg -i filebeat-7.6.2-amd64.deb
+  - name: install metricbeat
+    command: dpkg -i metricbeat-7.6.1-amd64.deb
 ~~~
-8. Add a section to copy the filebeat-config.yml from the Ansible container to the Web VMs:
+8. Add a section to copy the metricbeat-config.yml from the Ansible container to the Web VMs:
 ~~~  
-  - name: drop in filebeat.yml
-    copy:
-      src: /etc/ansible/filebeat-config.yml
-      dest: /etc/filebeat/filebeat.yml
+   - name: drop in metricbeat config
+     copy:
+       src: /etc/ansible/metricbeat-config.yml
+       dest: /etc/metricbeat/metricbeat.yml
 ~~~
-9. Next, add the command to enable and configure filebeat:
+9. Next, add the command to enable and configure metricbeat:
 ~~~
   - name: enable and configure system module
-    command: filebeat modules enable system
+    command: metricbeat modules enable system
 ~~~
-10. Then, add the command to setup filebeat:
+10. Then, add the command to setup metricbeat:
 ~~~
-  - name: setup filebeat
-    command: filebeat setup
+  - name: setup metricbeat
+    command: metricbeat setup
 ~~~
-11. Next, add the command to start filebeat service:
+11. Next, add the command to start metricbeat service:
 ~~~
-  - name: start filebeat service
-    command: service filebeat start
+  - name: start metricbeat service
+    command: service metricbeat start
 ~~~
-12. Lastly, add the command to enable filebeat service on boot:
+12. Lastly, add the command to enable metricbeat service on boot:
 ~~~
-  - name: enable service filebeat on boot
+  - name: enable service metricbeat on boot
     systemd:
-      name: filebeat
+      name: metricbeat
       enabled: yes
 ~~~
-13. Save the file.   The filebeat-playbook.yml should look like this:  ![filebeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7a02b597a53a19ce6c2149713b7857669881780e/Scripts/Ansible/Filebeat/filebeat-playbook.yml)
+13. Save the file.   The metricbeat-playbook.yml should look like this:  
 
-14. Inside the Ansible container, run the command: ansible-playbook filebeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
+14. Inside the Ansible container, run the command: ansible-playbook metricbeat-playbook.yml.   Make sure you are in the /etc/ansible folder.   The output should be as shown below:
 
 15. To verify successful installation of Filebeat:
     - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana

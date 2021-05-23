@@ -74,7 +74,7 @@ The install-elk.yml playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![image](https://user-images.githubusercontent.com/84385348/119247511-6f01a280-bbcd-11eb-88f2-59b149b77fd3.png)
+![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -99,10 +99,8 @@ These Beats allow us to collect the following information from each machine:
 
 3.  Metric collects statistics such as CPU and RAM usage.   In the event of a CPU or memory spike, it will show in the Metric dashboard in the Kibana.
 
-### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. 
-
-To configure your Jump box to run Docker containers and to install a container.
+### Install and run containers using Docker.
+To configure your Jump box to run Docker containers and to install a container:
 
 1. SSH into your Jump box.
 2. Run sudo apt update then sudo apt install docker.io
@@ -114,19 +112,22 @@ To configure your Jump box to run Docker containers and to install a container.
 
 6. Select any container from the available list.   Start using the container by typing the command:  sudo docker start [container_name]
 7. Get a shell in your container using docker attach [container_name]
-8. Run ssh-keygen to create an SSH key as shown below.
+
+### Set up Ansible connections to VMs
+To set up Ansible connections to VMs in the Virtual Network:
+1. Run ssh-keygen to create an SSH key as shown below.
 
 ![image](https://user-images.githubusercontent.com/84385348/119247532-a53f2200-bbcd-11eb-8264-f66e91f8da4a.png)
 
-9. Run cat .ssh/id_rsa.pub to display your public key.
+2. Run cat .ssh/id_rsa.pub to display your public key.
 
 ![image](https://user-images.githubusercontent.com/84385348/119247547-be47d300-bbcd-11eb-99d5-e0219bb7b96d.png)
 
-10.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
+3.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
-11. To make Ansible run the playbook on the web servers, update the /etc/ansible/hosts file.
+4. Update the /etc/ansible/hosts file.
   - Run nano /etc/ansible/hosts
   - Search for [webservers]
   - Uncomment the [webserservers] header line.
@@ -138,9 +139,7 @@ To configure your Jump box to run Docker containers and to install a container.
           10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ~~~
     
-12. To make the Ansible run the playbook on the ELK server, update the /etc/ansible/hosts file:
-  - In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.
-  - Add the internal IP address of the ELK server and add the python line beside the IP address.  
+5. In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.  Add the internal IP address of the ELK server and add the python line beside the IP address.  
 ~~~
           [elk]
           10.1.0.4 ansible_python_interpreter=/usr/bin/python3
@@ -148,7 +147,7 @@ To configure your Jump box to run Docker containers and to install a container.
 
 see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
 
-13. Next, update Ansible configuration file to use your administrator account for SSH connections.
+6. Next, update Ansible configuration file to use your administrator account for SSH connections.
   - Open the file with nano /etc/ansible/ansible.cfg 
   - Search for remote_user option.
   - Uncomment the remote_user line and replace root with your VM admin username 
@@ -158,7 +157,28 @@ see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro
     
 see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7fce973fc1b1d53a8a43ff0a7df1f5ce647e4ab8/Scripts/Ansible/Ansible%20config/ansible.cfg)
   
-     
+### Using the Playbook    
+
+4. Update the /etc/ansible/hosts file.
+  - Run nano /etc/ansible/hosts
+  - Search for [webservers]
+  - Uncomment the [webserservers] header line.
+  - Add the internal IP address of each webserver under the [webservers] and add the python line beside each IP.  
+~~~
+          [webservers]
+          10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+          10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+          10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+~~~
+    
+12. In the same file, search for [elk].   If it doesn't exist yet, add the [elk] header line.  Add the internal IP address of the ELK server and add the python line beside the IP address.  
+~~~
+          [elk]
+          10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+~~~
+
+see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)     
+
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:
 ~~~

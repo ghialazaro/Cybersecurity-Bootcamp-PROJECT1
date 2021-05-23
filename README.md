@@ -1,9 +1,10 @@
 # Week13-Homework-PROJECT
 Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below.
+The files in this repository were used to configure the network depicted below:
 
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/b74e6cff54406d69bd77fb9868c313f7baf90081/Network%20Diagram/Cloud%20Security%20with%20ELK%20Stack.png
+![image](https://user-images.githubusercontent.com/84385348/119246995-82ab0a00-bbc9-11eb-9671-2f7da15e1d6f.png)
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible Playbook file may be used to install only certain pieces of it, such as Filebeat.
 

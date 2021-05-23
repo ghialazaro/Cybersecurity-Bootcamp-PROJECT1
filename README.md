@@ -133,8 +133,7 @@ To configure your Jump box to run Docker containers and to install a container.
 
 10.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
 
-
-
+![image](https://user-images.githubusercontent.com/84385348/119247555-d3246680-bbcd-11eb-9e9a-e63a47fdca83.png)
 
 - Copy the _____ file to _____.
 - Update the _____ file to include...
@@ -198,4 +197,3 @@ To specify which machine to install the Metricbeat on:
 
 The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

@@ -246,7 +246,9 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
 
 #### Installing and configuring Filebeat using Ansible Playbook:      
 
-1)  Copy the Filebeat config file  to /etc/ansible folder:
+1)  Copy the Filebeat config file ![filebeat-config.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6b42247084b29c7c3c2c0459493d9000fcb2c1c8/Scripts/Ansible/Filebeat/filebeat-config.yml) to /etc/ansible folder.
+2)  Update the filebeat-config.yml file:
+    
 ~~~
   --
   - name: installing and launching filebeat

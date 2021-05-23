@@ -252,10 +252,10 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     - Search for output.elasticsearch:
     - Replace the IP address with the IP address of the ELK VM, as shown below:
 -------------------------------------------------------------------------------------------------
-output.elasticsearch:
-hosts: ["10.1.0.4:9200"]
-username: "elastic"
-password: "changeme"
+    output.elasticsearch:
+    hosts: ["10.1.0.4:9200"]
+    username: "elastic"
+    password:  "changeme"
 -------------------------------------------------------------------------------------------------
     
 ~~~

@@ -232,7 +232,7 @@ Installing and configuring ELK using Ansible Playbook:
        name: docker
        enabled: yes
 ~~~
-9.  The install-elk.yml should look like this:  
+9.  The install-elk.yml should look like this:  ![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/e2e2ebe7071af22eeab2f2cc26707d795bc24c19/Scripts/Ansible/ELK/install-elk.yml)
     Save the file.
 
 10.  Then run the command: ansible-playbook install-elk.yml. Make sure you are in the /etc/ansible folder.  The output should be as shown below:

@@ -5,22 +5,13 @@ The files in this repository were used to configure the network depicted below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119246995-82ab0a00-bbc9-11eb-9671-2f7da15e1d6f.png)
 
-
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible Playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-install-elk.yml
-
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6713bfd29db35878645abc59aec25516d9ae8cad/Scripts/Ansible/ELK/install-elk.yml
+![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6713bfd29db35878645abc59aec25516d9ae8cad/Scripts/Ansible/ELK/install-elk.yml)
   
-filebeat-playbook.yml
+![filebeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml)
   
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml
-  
-metricbeat-playbook.yml
-
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c8b3afacf94e94bd184b/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml
-
-  
+![metricbeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c8b3afacf94e94bd184b/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -156,7 +147,7 @@ To configure your Jump box to run Docker containers and to install a container.
      ~~~
      see updated /etc/ansible/hosts file:
      
-     ![file](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)
+     ![hosts.txt](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7ab1ff34f047c605a6d421448e2f109689ae4e62/Scripts/Ansible/Ansible%20config/hosts.txt)
      
 To specify which machine to install the ELK server on:
 1)  In the install-playbook.yml, specify the hosts as elk in the header of the Ansible playbook as shown below:

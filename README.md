@@ -166,14 +166,14 @@ Installing and configuring ELK using Ansible Playbook:
 2. To specify which machine to install the ELK server on, specify the hosts as elk in the header of the install-elk.yml as shown below:
 ~~~
  --
-  - name: Config elk VM with Docker     
-    hosts: elk                          
-    remote_user: azadmin                
-    become: true                    
-    tasks:             
+ - name: Config elk VM with Docker     
+   hosts: elk                          
+   remote_user: azadmin                
+   become: true                    
+   tasks:             
 ~~~
 3. Install docker.io by adding the section the install-elk.yml:
---------------------------------------------------------------------------------
+~~~
   - name: Install docker.io
         apt:
           update_cache: yes
@@ -181,55 +181,55 @@ Installing and configuring ELK using Ansible Playbook:
           name: docker.io
           state: present
           # Use apt module
---------------------------------------------------------------------------------
+~~~
 4. Install python3-pip by adding below section to the install-elk.yml:
---------------------------------------------------------------------------------
+~~~
   - name: Install python3-pip
         apt:
           force_apt_get: yes
           name: python3-pip
           state: present
           # Use pip module (It will default to pip3)
---------------------------------------------------------------------------------
+~~~
 5. Then, add below section to install the docker module:
 ~~~
-- name: Install Docker module
-      pip:
-        name: docker
-        state: present
+  - name: Install Docker module
+        pip:
+          name: docker
+          state: present
 ~~~
 6. Next, increase the virtual memory by adding the below section to the install-elk.yml:
 ~~~
-- name: Increase virtual memory
-      command: sysctl -w vm.max_map_count=262144
-      # Use sysctl module
-    - name: Use more memory
-      sysctl:
-        name: vm.max_map_count
-        value: 524288
-        state: present
-        reload: yes
+  - name: Increase virtual memory
+        command: sysctl -w vm.max_map_count=262144
+        # Use sysctl module
+      - name: Use more memory
+        sysctl:
+          name: vm.max_map_count
+          value: 524288
+          state: present
+          reload: yes
 ~~~       
 7.  Then download and launch the docker elk container and publish the ports that ELK runs on, by adding the following:
 ~~~
-- name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        # Please list the ports that ELK runs on
-        published_ports:
-          - 5601:5601
-          - 9200:9200
-          - 5044:5044   
+  - name: download and launch a docker elk container
+        docker_container:
+          name: elk
+          image: sebp/elk:761
+          state: started
+          restart_policy: always
+          # Please list the ports that ELK runs on
+          published_ports:
+            - 5601:5601
+            - 9200:9200
+            - 5044:5044   
 ~~~
 8.  Lastly, enable docker on boot by adding the following:
 ~~~
-- name: Enable service docker on boot
-     systemd:
-       name: docker
-       enabled: yes
+  - name: Enable service docker on boot
+      systemd:
+        name: docker
+        enabled: yes
 ~~~
 9.  The install-elk.yml should look like this:  ![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/e2e2ebe7071af22eeab2f2cc26707d795bc24c19/Scripts/Ansible/ELK/install-elk.yml)
     Save the file.
@@ -248,11 +248,11 @@ Installing and configuring ELK using Ansible Playbook:
 To specify which machine to install the Filebeat on:
 1)  In the filebeat-playbook.yml, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~
---
-- name: installing and launching filebeat
-  hosts: webservers
-  become: yes
-  tasks:
+  --
+  - name: installing and launching filebeat
+    hosts: webservers
+    become: yes
+    tasks:
 ~~~
   
 To specify which machine to install the Metricbeat on:

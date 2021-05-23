@@ -265,7 +265,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     setup.kibana:
     hosts: "10.1.0.4:5601"
 -------------------------------------------------------------------------------------------------
-4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command:  filebeat-playbook.yml
+4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command: nano filebeat-playbook.yml
 
 5. To specify which machine to install the Filebeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~
@@ -348,7 +348,7 @@ see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghia
     setup.kibana:
     hosts: "10.1.0.4:5601"
 -------------------------------------------------------------------------------------------------
-4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command:  metricbeat-playbook.yml
+4. Create a file in /etc/ansible folder called filebeat-playbook.yml by running command: nano metricbeat-playbook.yml
 
 5. To specify which machine to install the Metricbeat on, specify the hosts as webservers in the header of Ansible playbook as shown below:
 ~~~

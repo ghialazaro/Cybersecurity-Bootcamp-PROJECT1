@@ -109,9 +109,28 @@ These Beats allow us to collect the following information from each machine:
 3.  Metric collects statistics such as CPU and RAM usage.   In the event of a CPU or memory spike, it will show in the Metric dashboard in the Kibana.
 
 ### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+In order to use the playbook, you will need to have an Ansible control node already configured. 
 
-SSH into the control node and follow the steps below:
+To configure your Jump box to run Docker containers and to install a container.
+
+1. SSH into your Jump box.
+2. Run sudo apt update then sudo apt install docker.io
+3. Run sudo systemctl status docker
+4. Run sudo docker pull cyberxsecurity/ansible.
+5. By running command:  sudo docker ps  -a, it will list all available containers as shown below:
+
+
+6. Select any container from the available list.   Start using the container by typing the command:  sudo docker start [container_name]
+7. Get a shell in your container using docker attach [container_name]
+8. Run ssh-keygen to create an SSH key as shown below.
+
+9. Run cat .ssh/id_rsa.pub to display your public key.
+
+10.  Copy the public key.  Go to one of the VM's details page and select Reset password.   Paste the public key in the SSH public key field, as shown below:
+
+
+
+
 - Copy the _____ file to _____.
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.

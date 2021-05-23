@@ -239,7 +239,7 @@ Installing and configuring ELK using Ansible Playbook:
 
 ![image](https://user-images.githubusercontent.com/84385348/119249719-20a8cf80-bbde-11eb-8edc-b423b3d94c5b.png)
 
-11. The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+11.  From the Ansible container, SSH to The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![image](https://user-images.githubusercontent.com/84385348/119248539-264de780-bbd5-11eb-8abb-ad20c994f77e.png)
 

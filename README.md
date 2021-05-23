@@ -81,7 +81,10 @@ The install-elk.yml playbook implements the following tasks:
 - Downloads and launches the docker elk container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4bacf4fff6a1283b810316ae80519e1d798ebc46/Images/docker%20ps%20output.png
+
+![image](https://user-images.githubusercontent.com/84385348/119246983-6dce7680-bbc9-11eb-9510-34e90aacfe3f.png)
+
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:

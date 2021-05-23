@@ -153,6 +153,11 @@ see updated /etc/ansible/hosts file:  ![hosts.txt](https://github.com/ghialazaro
 ~~~
     
 see updated /etc/ansible/ansible.cfg fie: ![ansible.cfg](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/7fce973fc1b1d53a8a43ff0a7df1f5ce647e4ab8/Scripts/Ansible/Ansible%20config/ansible.cfg)
+
+7.  To test the Ansible connections to VMs, run the command:  ansible all -m ping.  A successful output is shown below:
+
+![image](https://user-images.githubusercontent.com/84385348/119249560-c78c6c00-bbdc-11eb-9d8e-439648c5eb8e.png)
+
   
 ### Using the Playbook    
 

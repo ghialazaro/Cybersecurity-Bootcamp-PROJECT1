@@ -1,0 +1,20 @@
+#### Exploring Kibana
+1.  In Kibana landing page, click on Load a data set and a Kibana dashboard under Add sample data, as shown below:
+
+2.  In the Add Data to Kibana, select Dashboard in View data dropdown in the Sample web logs, as shown below:
+
+3.  Kibana dashboard with sample logs will look like this:
+
+4.  In the last 7 days, there were 248 visitors located in India:
+
+5.  In the last 24 hours, there were 12 visitors from China using Mac OSX.
+
+6.  In the last 2 days, there were 0% users that received 404 errors and 9.091% received 503 errors.
+
+7.  In the last 7 days, China produced the majority of the traffic on the website.
+
+8.  The types of downloaded files in the last 7 days are:
+    - gz:  file type of gz extension are compressed archives that are created by the standard GNU zip (gzip) compression algorithm
+    - css:  file type of css extension is a cascading style sheet (CSS) file used to format the contents of a webpage
+    - deb:  file type of deb extension is the software package format for the Linux distribution Debian and its derivatives
+    - zip:  

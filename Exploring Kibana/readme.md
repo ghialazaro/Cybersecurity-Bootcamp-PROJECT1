@@ -11,6 +11,12 @@
 
 ![image](https://user-images.githubusercontent.com/84385348/119345651-84192700-bcdc-11eb-9526-9e610b4ba2e7.png)
 
+4.  You can specify the duration (e.g. last 15 minutes, last 7 days, et al) by clicking on the drop down beside the Show Date in the upper righ hand corner, as shown below:
+
+5.  You can also specify the date and time by clicking on Show Date and select Absolute, as shown below:
+
+6.  You can also filter by country and OS used, as shown below:
+
 4.  In the last 7 days, there were 248 visitors located in India:
 
 5.  In the last 24 hours, there were 12 visitors from China using Mac OSX.

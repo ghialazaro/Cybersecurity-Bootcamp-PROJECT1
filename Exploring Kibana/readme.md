@@ -83,6 +83,9 @@ You can click on the part of the graph that you want to analyse, as shown below:
     
 8.  You can switch to Kibana Discover by selecting Discover in the left hand pane of the dashboard, as shown below:
 
+![image](https://user-images.githubusercontent.com/84385348/119350277-7d8dae00-bce2-11eb-8fda-e6b5c02a4a05.png)
+
+
 9.  In the Discover page, the filter is set to filebeat by default.  Change the value of the filter to kibana_sample_data_logs, as shown below:
 
 10.  You can expand each activity to see the details, as below:

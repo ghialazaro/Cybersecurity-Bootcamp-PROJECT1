@@ -11,7 +11,7 @@
 
 ![image](https://user-images.githubusercontent.com/84385348/119345651-84192700-bcdc-11eb-9526-9e610b4ba2e7.png)
 
-4.  You can specify the duration (e.g. last 15 minutes, last 7 days, et al) by clicking on the drop down beside the Show Date in the upper righ hand corner, as shown below:
+4.  You can specify the duration (e.g. last 15 minutes, last 7 days, et al) by clicking on the drop down beside the Show Date in the upper righ hand corner, as shown below:![image](https://user-images.githubusercontent.com/84385348/119346606-c4c57000-bcdd-11eb-9225-92461cac57bf.png)
 
 5.  You can also specify the date and time by clicking on Show Date and select Absolute, as shown below:
 

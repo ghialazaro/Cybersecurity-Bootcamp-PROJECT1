@@ -88,6 +88,9 @@ You can click on the part of the graph that you want to analyse, as shown below:
 
 9.  In the Discover page, the filter is set to filebeat by default.  Change the value of the filter to kibana_sample_data_logs, as shown below:
 
+![image](https://user-images.githubusercontent.com/84385348/119350349-9007e780-bce2-11eb-8ee8-31a6374b028d.png)
+
+
 10.  You can expand each activity to see the details, as below:
 
      For example, the activity @timestamp	May 21, 2021 @ 07:25:00.241

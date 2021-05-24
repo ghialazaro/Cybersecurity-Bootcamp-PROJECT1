@@ -57,10 +57,12 @@
     
 6.  In the Unique Visitors vs. Average Bytes section, you can see the number of visitors vs Average Bytes in a 3 hour duration.  For example, the time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
 
+![image](https://user-images.githubusercontent.com/84385348/119348573-66e65780-bce0-11eb-8e2f-a4deb40b5853.png)
+
+You can click on the part of the graph that you want to analyse, as shown below:
 
 
-
-    - This is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.
+    - Based on the above, this activity is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.
 
     - The time stamp with the most average bytes was 07:55 on 21 May 2021.   
     

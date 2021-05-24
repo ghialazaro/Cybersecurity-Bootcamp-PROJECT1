@@ -29,6 +29,9 @@
 
 1.  In the last 7 days, there were 248 visitors located in India:
 
+![image](https://user-images.githubusercontent.com/84385348/119347420-d9563800-bcde-11eb-863d-e6523a2944ce.png)
+
+
 5.  In the last 24 hours, there were 12 visitors from China using Mac OSX.
 
 6.  In the last 2 days, there were 0% users that received 404 errors and 9.091% received 503 errors.

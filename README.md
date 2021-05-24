@@ -416,6 +416,8 @@ To set up Ansible connections to VMs in the Virtual Network:
 
 ![image](https://user-images.githubusercontent.com/84385348/119262315-232b1980-bc1e-11eb-8169-640abe45a40f.png)
 
+4.  More on exploring Kibana in the link below:
 
+![Exploring Kibana](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/ea62c38c414320653ac21be1e8d471aa12dca39f/Exploring%20Kibana/Exploring%20Kibana)
 
 

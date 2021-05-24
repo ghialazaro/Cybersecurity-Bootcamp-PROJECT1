@@ -93,6 +93,9 @@ You can click on the part of the graph that you want to analyse, as shown below:
 
 10.  You can expand each activity to see the details, as below:
 
+![image](https://user-images.githubusercontent.com/84385348/119350411-a3b34e00-bce2-11eb-9cc8-cad2c85db439.png)
+
+
      For example, the activity @timestamp	May 21, 2021 @ 07:25:00.241
 
      - The source IP address of this activity is 74.184.0.64

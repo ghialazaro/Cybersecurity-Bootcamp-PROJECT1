@@ -52,8 +52,12 @@
     - deb:  file type of deb extension is the software package format for the Linux distribution Debian and its derivatives
     - zip:  file type of zip extension is an archive file format that supports lossless data compression
 
+![image](https://user-images.githubusercontent.com/84385348/119348418-2dade780-bce0-11eb-8a2e-702bef266f4d.png)
+
     
-6.  The time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
+6.  In the Unique Visitors vs. Average Bytes section, you can see the number of visitors vs Average Bytes in a 3 hour duration.  For example, the time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
+
+
 
 
     - This is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.

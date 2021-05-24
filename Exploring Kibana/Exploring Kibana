@@ -1,7 +1,7 @@
 #### Exploring Kibana
 1.  In Kibana landing page, click on Load a data set and a Kibana dashboard under Add sample data, as shown below:
     
-
+    
 2.  In the Add Data to Kibana, select Dashboard in View data dropdown in the Sample web logs, as shown below:
 
 3.  Kibana dashboard with sample logs will look like this:

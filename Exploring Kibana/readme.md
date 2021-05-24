@@ -45,8 +45,10 @@
 
 ![image](https://user-images.githubusercontent.com/84385348/119347700-3b16a200-bcdf-11eb-9702-d1889a5e57a8.png)
 
+5. You can look at the heatmap to determine which time of day had the highest amount of activity, as shown below:
 
-5.  You can also see the types of files being downloaded by looking at the Host, Visits and Bytes Table.   For example, the types of downloaded files in the last 7 days are:
+
+6.  You can also see the types of files being downloaded by looking at the Host, Visits and Bytes Table.   For example, the types of downloaded files in the last 7 days are:
     - gz:  file type of gz extension are compressed archives that are created by the standard GNU zip (gzip) compression algorithm
     - css:  file type of css extension is a cascading style sheet (CSS) file used to format the contents of a webpage
     - deb:  file type of deb extension is the software package format for the Linux distribution Debian and its derivatives
@@ -55,7 +57,7 @@
 ![image](https://user-images.githubusercontent.com/84385348/119348418-2dade780-bce0-11eb-8a2e-702bef266f4d.png)
 
     
-6.  In the Unique Visitors vs. Average Bytes section, you can see the number of visitors vs Average Bytes in a 3 hour duration.  For example, the time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
+7.  In the Unique Visitors vs. Average Bytes section, you can see the number of visitors vs Average Bytes in a 3 hour duration.  For example, the time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119348573-66e65780-bce0-11eb-8e2f-a4deb40b5853.png)
 
@@ -73,6 +75,9 @@ You can click on the part of the graph that you want to analyse, as shown below:
    - The https response code encountered is 200.
     
    - The countries these activities originated were China, India, Indonesia and Nigeria, as shown below:
+
+![image](https://user-images.githubusercontent.com/84385348/119349135-23401d80-bce1-11eb-87f3-ae5e28a4c11a.png)
+
     
 10.
     

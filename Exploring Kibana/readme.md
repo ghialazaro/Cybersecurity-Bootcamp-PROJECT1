@@ -62,15 +62,15 @@
 You can click on the part of the graph that you want to analyse, as shown below:
 
 
-    - Based on the above, this activity is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.
+   - Based on the above, this activity is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.
 
-    - The time stamp with the most average bytes was 07:55 on 21 May 2021.   
+   - The time stamp with the most average bytes was 07:55 on 21 May 2021.   
     
-    - The types of file being downloaded css, gz and rpm.
+   - The types of file being downloaded css, gz and rpm.
     
-    - The https response code encountered is 200.
+   - The https response code encountered is 200.
     
-    - The countries these activities originated were China, India, Indonesia and Nigeria, as shown below:
+   - The countries these activities originated were China, India, Indonesia and Nigeria, as shown below:
     
 10.
     

@@ -31,21 +31,22 @@
 
 ![image](https://user-images.githubusercontent.com/84385348/119347420-d9563800-bcde-11eb-863d-e6523a2944ce.png)
 
+2.  In the last 24 hours, there were 12 visitors from China using Mac OSX.
 
-5.  In the last 24 hours, there were 12 visitors from China using Mac OSX.
+![image](https://user-images.githubusercontent.com/84385348/119347503-f5f27000-bcde-11eb-81cc-5ad6e1880fb3.png)
 
-6.  In the last 2 days, there were 0% users that received 404 errors and 9.091% received 503 errors.
+3.  In the last 2 days, there were 0% users that received 404 errors and 9.091% received 503 errors.
 
-7.  In the last 7 days, China produced the majority of the traffic on the website.
+4.  In the last 7 days, China produced the majority of the traffic on the website.
 
-8.  The types of downloaded files in the last 7 days are:
+5.  The types of downloaded files in the last 7 days are:
     - gz:  file type of gz extension are compressed archives that are created by the standard GNU zip (gzip) compression algorithm
     - css:  file type of css extension is a cascading style sheet (CSS) file used to format the contents of a webpage
     - deb:  file type of deb extension is the software package format for the Linux distribution Debian and its derivatives
     - zip:  file type of zip extension is an archive file format that supports lossless data compression
     
     
-9.  The time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
+6.  The time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
 
 
     - This is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.

@@ -4,6 +4,8 @@
     
 2.  In the Add Data to Kibana, select Dashboard in View data dropdown in the Sample web logs, as shown below:
 
+![Image](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/ccaafeda0d7b3be4f0c56f583eb2e03620e62712/Exploring%20Kibana/Images/Add%20Sample%20web%20log.png)
+
 3.  Kibana dashboard with sample logs will look like this:
 
 4.  In the last 7 days, there were 248 visitors located in India:

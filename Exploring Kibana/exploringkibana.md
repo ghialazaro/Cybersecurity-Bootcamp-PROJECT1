@@ -80,29 +80,37 @@ You can click on the part of the graph that you want to analyse, as shown below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119349135-23401d80-bce1-11eb-87f3-ae5e28a4c11a.png)
 
-    
-8.  You can switch to Kibana Discover by selecting Discover in the left hand pane of the dashboard, as shown below:
+## Kibana Discover:
+   
+1.  You can switch to Kibana Discover by selecting Discover in the left hand pane of the dashboard, as shown below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119350277-7d8dae00-bce2-11eb-8fda-e6b5c02a4a05.png)
 
 
-9.  In the Discover page, the filter is set to filebeat by default.  Change the value of the filter to kibana_sample_data_logs, as shown below:
+2.  In the Discover page, the filter is set to filebeat by default.  Change the value of the filter to kibana_sample_data_logs, as shown below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119350349-9007e780-bce2-11eb-8ee8-31a6374b028d.png)
 
 
-10.  You can expand each activity to see the details, as below:
+3.  You can expand each activity to see the details, as below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119350411-a3b34e00-bce2-11eb-9cc8-cad2c85db439.png)
 
 
-     For example, the activity @timestamp	May 21, 2021 @ 07:25:00.241
+   For example, the activity @timestamp	May 21, 2021 @ 07:25:00.241
 
-     - The source IP address of this activity is 74.184.0.64
-     - The geo coordinates of this activity are "lat": 39.07797222, "lon": -77.5575
-     - The OS of the source machine was ios.
-     - The full URL that was accessed was:https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.3.2-i686.rpm
-     - And the website the visitor's traffic originated from was:  http://facebook.com/success/william-frederick-fisher
+   - The source IP address of this activity is 74.184.0.64
+   - The geo coordinates of this activity are "lat": 39.07797222, "lon": -77.5575
+   - The OS of the source machine was ios.
+   - The full URL that was accessed was:https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.3.2-i686.rpm
+   - And the website the visitor's traffic originated from was:  http://facebook.com/success/william-frederick-fisher
+
+ ## Conclusion:
+It seems that the user is downloading an rpm file from artifacts.elastic.co/downloads/beats/metricbeats.  A metricbeat rpm file is generally not a malicious file.  It might      be that the user is trying to install metricbeat, hence the user is downloading the installation file from artifacts.elastic.co website.  Although there is nothing suspicious about this activity, but what is concerning is the referral link from a Facebook of a person named William Frederick Fisher.  IT is not within the complian guidelines of posting package update links on Facebook.   It is suggested to further investigate into this activity and monitor for similar activities.
+
+
+
+
 
 
 

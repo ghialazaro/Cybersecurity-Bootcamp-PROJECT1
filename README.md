@@ -1,25 +1,25 @@
 # Week13-Homework-PROJECT
+
 Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below:
+The files in this repository and the instructions in this document were used to configure the network depicted below:
 
 ![image](https://user-images.githubusercontent.com/84385348/119246995-82ab0a00-bbc9-11eb-9671-2f7da15e1d6f.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible Playbook file may be used to install only certain pieces of it, such as Filebeat.
-
-![install-elk.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/6713bfd29db35878645abc59aec25516d9ae8cad/Scripts/Ansible/ELK/install-elk.yml)
-  
-![filebeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/4cc26d9aa41114d953089e35c439a314f3813c05/Scripts/Ansible/Filebeat/filebeat-playbook.yml)
-  
-![metricbeat-playbook.yml](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/802d4d1f86272a00d6d1c8b3afacf94e94bd184b/Scripts/Ansible/Metricbeat/metricbeat-playbook.yml)
+These files and instructions have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.
 
 This document contains the following details:
 - Description of the Topology
 - Access Policies
 - ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
+- Target machines and Beats in use
+- Install and run containers using Docker
+- Set up Ansible connections to VMs
+- Using the Playbook to install:
+  -  ELK
+  -  Filebeat
+  -  Metricbeat
+- Navigating to ELK
 
 
 ### Description of the Topology
@@ -28,7 +28,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.  Load balancers protect a website from a Denial of Service attack by distributing traffic across a group of backend web servers.
 
-A jump box controls access to machines in the private network by allowing connections from specific IP addresses.
+A Jump Box controls access to machines in the private network by allowing connections from specific IP addresses.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system use.
 
@@ -36,6 +36,7 @@ Filebeat watches the log files, collects log events and forwards to Elasticsearc
 
 Metricbeat records the metrics and statistics that it collects and ships them to Elasticsearch.
 
+The configuration details of each machine may be found below:
 
 | Name         | Function | IP Address | Operating System |
 |--------------|----------|------------|------------------|
@@ -43,6 +44,7 @@ Metricbeat records the metrics and statistics that it collects and ships them to
 | Web-1        |  DVWA    | 10.0.0.5   | Linux            |
 | Web-2        |  DVWA    | 10.0.0.6   | Linux            |
 | Redundant-VM |  DVWA    | 10.0.0.7   | Linux            |
+| ELK-VM       |  ELK     | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
@@ -71,6 +73,7 @@ The install-elk.yml playbook implements the following tasks:
 - Increases the virtual memory
 - Downloads and launches the docker elk container
 
+More on this in the Installing and configuring ELK using Ansible Playbook section below.
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -408,7 +411,7 @@ To set up Ansible connections to VMs in the Virtual Network:
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:
     ![image](https://user-images.githubusercontent.com/84385348/119261657-ba42a200-bc1b-11eb-813b-63d72c69cd1d.png)
 
- ### Navigating ELK
+ ### Navigating to ELK
 
 1. The URL to navigate ELK is http://52.184.196.183:5601/app/kibana
 2. In the left hand pane of landing page, select the Dashboard.

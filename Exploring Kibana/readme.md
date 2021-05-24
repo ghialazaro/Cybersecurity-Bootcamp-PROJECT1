@@ -35,9 +35,13 @@
 
 ![image](https://user-images.githubusercontent.com/84385348/119347503-f5f27000-bcde-11eb-81cc-5ad6e1880fb3.png)
 
+
 3.  In the last 2 days, there were 0% users that received 404 errors and 9.091% received 503 errors.
 
-4.  In the last 7 days, China produced the majority of the traffic on the website.
+4.  You can also scroll down to Total Requests and Bytes section, and hover your mouse to each country to see the number of web log counts for each country.   For example, in the last 7 days, China produced the majority of the traffic on the website.
+
+![image](https://user-images.githubusercontent.com/84385348/119347700-3b16a200-bcdf-11eb-9702-d1889a5e57a8.png)
+
 
 5.  The types of downloaded files in the last 7 days are:
     - gz:  file type of gz extension are compressed archives that are created by the standard GNU zip (gzip) compression algorithm

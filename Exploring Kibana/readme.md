@@ -38,18 +38,20 @@
 
 3.  The dashboard also tells you the % of users that received specific errors by looking at the Response Codes Over Time + Annotations section.   For example, in the last 2 days, there were 0% users that received 404 errors and 9.091% received 503 errors.
 
+![image](https://user-images.githubusercontent.com/84385348/119348059-b8421700-bcdf-11eb-99c2-e9c4d9142f77.png)
+
 
 4.  You can also scroll down to Total Requests and Bytes section, and hover your mouse to each country to see the number of web log counts for each country.   For example, in the last 7 days, China produced the majority of the traffic on the website.
 
 ![image](https://user-images.githubusercontent.com/84385348/119347700-3b16a200-bcdf-11eb-9702-d1889a5e57a8.png)
 
 
-5.  The types of downloaded files in the last 7 days are:
+5.  You can also see the types of files being downloaded by looking at the Host, Visits and Bytes Table.   For example, the types of downloaded files in the last 7 days are:
     - gz:  file type of gz extension are compressed archives that are created by the standard GNU zip (gzip) compression algorithm
     - css:  file type of css extension is a cascading style sheet (CSS) file used to format the contents of a webpage
     - deb:  file type of deb extension is the software package format for the Linux distribution Debian and its derivatives
     - zip:  file type of zip extension is an archive file format that supports lossless data compression
-    
+
     
 6.  The time frame in the last 7 days with the most amount of bytes was on 21 May 2021 from 06:00-09:00, as shown below:
 

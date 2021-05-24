@@ -45,7 +45,9 @@
 
 ![image](https://user-images.githubusercontent.com/84385348/119347700-3b16a200-bcdf-11eb-9702-d1889a5e57a8.png)
 
-5. You can look at the heatmap to determine which time of day had the highest amount of activity, as shown below:
+5. You can look at the Heatmap to determine which time of day had the highest amount of activity, as shown below:
+
+![image](https://user-images.githubusercontent.com/84385348/119349338-68644f80-bce1-11eb-9506-a89c7187286f.png)
 
 
 6.  You can also see the types of files being downloaded by looking at the Host, Visits and Bytes Table.   For example, the types of downloaded files in the last 7 days are:
@@ -79,6 +81,22 @@ You can click on the part of the graph that you want to analyse, as shown below:
 ![image](https://user-images.githubusercontent.com/84385348/119349135-23401d80-bce1-11eb-87f3-ae5e28a4c11a.png)
 
     
-10.
+8.  You can switch to Kibana Discover by selecting Discover in the left hand pane of the dashboard, as shown below:
+
+9.  In the Discover page, the filter is set to filebeat by default.  Change the value of the filter to kibana_sample_data_logs, as shown below:
+
+10.  You can expand each activity to see the details, as below:
+
+     For example, the activity @timestamp	May 21, 2021 @ 07:25:00.241
+
+     - The source IP address of this activity is 74.184.0.64
+     - The geo coordinates of this activity are "lat": 39.07797222, "lon": -77.5575
+     - The OS of the source machine was ios.
+     - The full URL that was accessed was:https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.3.2-i686.rpm
+     - And the website the visitor's traffic originated from was:  http://facebook.com/success/william-frederick-fisher
+
+
+
+
     
     

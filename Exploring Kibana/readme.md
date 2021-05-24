@@ -6,14 +6,19 @@
 ![Image](https://github.com/ghialazaro/Week13-Homework-PROJECT/blob/ccaafeda0d7b3be4f0c56f583eb2e03620e62712/Exploring%20Kibana/Images/Add%20Sample%20web%20log.png)
 
 3.  Kibana dashboard with sample logs will look like this:
+
 ![image](https://user-images.githubusercontent.com/84385348/119345651-84192700-bcdc-11eb-9526-9e610b4ba2e7.png)
 
-4.  You can specify the duration (e.g. last 15 minutes, last 7 days, et al) by clicking on the drop down beside the Show Date in the upper righ hand corner, as shown below:![image](https://user-images.githubusercontent.com/84385348/119346606-c4c57000-bcdd-11eb-9225-92461cac57bf.p![image](https://user-images.githubusercontent.com/84385348/119346833-0e15bf80-bcde-11eb-86d9-ba6c6b208afc.png)ng)
+4.  You can specify the duration (e.g. last 15 minutes, last 7 days, et al) by clicking on the drop down beside the Show Date in the upper righ hand corner, as shown below:
+
+![image](https://user-images.githubusercontent.com/84385348/119346606-c4c57000-bcdd-11eb-9225-92461cac57bf.p![image](https://user-images.githubusercontent.com/84385348/119346833-0e15bf80-bcde-11eb-86d9-ba6c6b208afc.png)ng)
 
 5.  You can also specify the date and time by clicking on Show Date and select Absolute, as shown below:
+
 ![image](https://user-images.githubusercontent.com/84385348/119346718-ede60080-bcdd-11eb-9c89-01c6413f02a9.png)
 
 6.  You can also filter by country and OS used, as shown below:
+
 ![image](https://user-images.githubusercontent.com/84385348/119346909-238ae980-bcde-11eb-845f-360602cc2a02.png)
 
 ## Here are some examples:

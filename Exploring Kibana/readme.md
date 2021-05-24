@@ -61,6 +61,8 @@
 
 You can click on the part of the graph that you want to analyse, as shown below:
 
+![image](https://user-images.githubusercontent.com/84385348/119348995-ef64f800-bce0-11eb-80e1-5dc48abca3f5.png)
+
 
    - Based on the above, this activity is quite unusual, as there were less visitors but the average bytes is quite high compared to other days.
 

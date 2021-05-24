@@ -17,4 +17,6 @@
     - gz:  file type of gz extension are compressed archives that are created by the standard GNU zip (gzip) compression algorithm
     - css:  file type of css extension is a cascading style sheet (CSS) file used to format the contents of a webpage
     - deb:  file type of deb extension is the software package format for the Linux distribution Debian and its derivatives
-    - zip:  
+    - zip:  file type of zip extension is an archive file format that supports lossless data compression
+    
+    

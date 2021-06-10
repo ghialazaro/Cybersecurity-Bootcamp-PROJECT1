@@ -4,7 +4,6 @@ Automated ELK Stack Deployment
 
 The files in this repository and the instructions in this document were used to configure the network depicted below:
 
-![image](https://user-images.githubusercontent.com/84385348/119246995-82ab0a00-bbc9-11eb-9671-2f7da15e1d6f.png)
 
 These files and instructions have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.
 

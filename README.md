@@ -1,6 +1,4 @@
-# Week13-Homework-PROJECT
-
-Automated ELK Stack Deployment
+# Automated ELK Stack Deployment
 
 The files in this repository and the instructions in this document were used to configure the network depicted below:
 

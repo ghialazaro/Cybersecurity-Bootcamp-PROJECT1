@@ -1,6 +1,7 @@
 # Automated ELK Stack Deployment
 
 The files in this repository and the instructions in this document were used to configure the network depicted below:
+![image](https://github.com/ghialazaro/Cybersecurity-Bootcamp-PROJECT1/blob/e0fab3503767c3dfee4b65f3c4e3ad500476029f/Images/Cloud%20Security%20with%20ELK%20Stack.png)
 
 
 These files and instructions have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.

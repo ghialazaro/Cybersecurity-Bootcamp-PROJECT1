@@ -56,10 +56,10 @@ My home IP address can access the ELK VM via http on port 5601.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes                 | home IP address      |
-| ELK      | Yes                 | home IP address      |
+| Name     | Publicly Accessible | Allowed IP Addresses |  Protocol |  Port  |
+|----------|---------------------|----------------------|-----------|--------|
+| Jump Box | Yes                 | home IP address      |   SSH     |    22  |
+| ELK      | Yes                 | home IP address      |   HTTP    |  5601  | 
 
 
 ### Elk Configuration

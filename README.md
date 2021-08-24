@@ -402,7 +402,7 @@ To set up Ansible connections to VMs in the Virtual Network:
 
 ![image](https://user-images.githubusercontent.com/84385348/119262240-d5161600-bc1d-11eb-8656-af76dec03eeb.png)
 
-15. To verify successful installation of Filebeat:
+15. To verify successful installation of Metricbeat:
     - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
     - Click on Add metric data under Metrics
     - Click on System metrics.  

@@ -76,11 +76,11 @@ More on this in the Installing and configuring ELK using Ansible Playbook sectio
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-| Name         | Function  | IP Addresses |
-|--------------|-----------|--------------|
-| Web-1        | DVWA      | 10.0.0.5     |
-| Web-2        | DVWA      | 10.0.0.6     |
-| Redundant-VM | DVWA      | 10.0.0.7     |
+| Name         | Function  | IP Addresses |  Protocol  |  Port  |
+|--------------|-----------|--------------|------------|--------|
+| Web-1        | DVWA      | 10.0.0.5     |   HTTP     |  9200  |
+| Web-2        | DVWA      | 10.0.0.6     |   HTTP     |  9200  |
+| Redundant-VM | DVWA      | 10.0.0.7     |   HTTP     |  9200  |
 
 The following Beats have been installed on these machines:
 

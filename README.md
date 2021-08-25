@@ -321,7 +321,7 @@ To set up Ansible connections to VMs in the Virtual Network:
 ![image](https://user-images.githubusercontent.com/84385348/119261490-03462680-bc1b-11eb-92e9-34898d0b0f78.png)
 
 15. To verify successful installation of Filebeat:
-    - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
+    - Navigate to Kibana url:   http://52.184.196.183:5601/app/kibana
     - Click on Add log data under Logs
     - Click on System Logs.  
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:
@@ -403,7 +403,7 @@ To set up Ansible connections to VMs in the Virtual Network:
 ![image](https://user-images.githubusercontent.com/84385348/119262240-d5161600-bc1d-11eb-8656-af76dec03eeb.png)
 
 15. To verify successful installation of Metricbeat:
-    - Navigate to ELK url:   http://52.184.196.183:5601/app/kibana
+    - Navigate to Kibana url:   http://52.184.196.183:5601/app/kibana
     - Click on Add metric data under Metrics
     - Click on System metrics.  
     - Scroll to Step 5: Module Data and click on Check Data, as shown below:

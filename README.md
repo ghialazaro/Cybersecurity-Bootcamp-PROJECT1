@@ -110,8 +110,8 @@ To configure your Jump box to run Docker containers and to install a container:
 6. Select any container from the available list.   Start using the container by typing the command:  sudo docker start [container_name]
 7. Get a shell in your container using docker attach [container_name]
 
-### Set up Ansible connections to VMs
-To set up Ansible connections to VMs in the Virtual Network:
+### Set up Ansible connections to web server VMs
+To set up Ansible connections to webe server VMs in the Virtual Network:
 1. Run ssh-keygen to create an SSH key as shown below.
 
 ![image](https://user-images.githubusercontent.com/84385348/119247532-a53f2200-bbcd-11eb-8264-f66e91f8da4a.png)
